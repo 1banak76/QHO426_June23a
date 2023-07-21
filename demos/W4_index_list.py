@@ -6,10 +6,8 @@ def movements():
 def run():
     print("Moving...")
     lista = movements()
-    for i in range(0, (len(lista)-1), 2):
-        direction = lista[i]
-        steps = lista[i+1]
-        print(f"{direction} for {steps} steps")
+    for index in range(0, len(lista)-1, 2):
+        print("{} for {} steps".format(lista[index], lista[index+1]))
 
 
 run()
