@@ -13,14 +13,14 @@ def long_pattern():
     return pattern
 
 
-def pattern(s,o):
+def pattern(s, o):
     return{"sequence": s, "occurrences": o}
 
 
 def run():
     print("Analysing Patterns....")
     d = {"short pattern": short_pattern(), "medium pattern": medium_pattern(), "long_pattern": long_pattern()}
-    for k,v in d.items:
+    for k, v in d.items():
         print(f"{k}:{v}")
 
 
