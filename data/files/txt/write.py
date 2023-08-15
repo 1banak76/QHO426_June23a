@@ -9,20 +9,26 @@ def search(f_name):
         for line in file:
             if line.startswith("Section"):
                 sections.append(line.strip().split(":")[1])
-            elif not line.startswith("Section"):
+            else:
                 books.append(line.strip())
 
     print("Done!")
 
-    return tuple(sections) + tuple(books)
+    return sections, books
 
 
-#def save(f_name,):
+def save(f_name, data):
+    sections, books = data
+    print("Saving...")
+    with open(f_name, "w") as file:
+        file.write("Sections: {}\n".format(sections))
+        file.write("Books: {}\n".format(books))
+    print("Done")
 
 
 def run():
-    path = os.getcwd()
-    print(search(f"{path}/books.txt"))
+    data = search("books.txt")
+    save("section-books.txt", data)
 
 
 run()
